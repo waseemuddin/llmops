@@ -56,3 +56,5 @@ print(len(token_ids))
 print("\nDecoded:")
 print(tokenizer.decode(token_ids))
 ````
+
+![llm15](/img/output01.png)
