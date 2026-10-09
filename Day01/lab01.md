@@ -1,7 +1,7 @@
 ### For the first few days, you don't need a GPU. Your Ubuntu system is sufficient.
 
 #### Create our working environment:
-`` sh
+```bash
 mkdir -p ~/fde-llmops
 cd ~/fde-llmops
 
@@ -10,26 +10,26 @@ source .venv/bin/activate
 
 python --version
 pip install --upgrade pip
-``
+````
 
 #### Create the first module:
 
-`` sh
+```bash
 mkdir 01-llm-fundamentals
 cd 01-llm-fundamentals
-``
+````
 #### Install:
 
-`` sh
+```bash
 pip install transformers
-``
+````
 ### creatre file
 
-`` sh
+```bash
 vi tokenizer_lab.py
-``
+````
 
-`` sh
+```bash
 from transformers import AutoTokenizer
 
 model = "bert-base-uncased"
@@ -55,4 +55,4 @@ print(len(token_ids))
 
 print("\nDecoded:")
 print(tokenizer.decode(token_ids))
-``
+````
