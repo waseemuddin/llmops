@@ -77,8 +77,8 @@ The ## indicates this subword attaches to a previous one
 
 ### Why should an LLMOps engineer care?
 Because tokens affect:
-GPU memory
-Context size
+### GPU memory
+#### Context size
 Latency
 Throughput
 API cost
