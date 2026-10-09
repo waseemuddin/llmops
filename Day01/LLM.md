@@ -77,12 +77,13 @@ The ## indicates this subword attaches to a previous one
 
 ### Why should an LLMOps engineer care?
 Because tokens affect:
-### GPU memory
+#### GPU memory
 #### Context size
-Latency
-Throughput
-API cost
-KV-cache consumption
+#### Latency
+#### Throughput
+#### API cost
+#### KV-cache consumption
+
 If an API charges per million tokens, tokenization directly affects cost.
 
 
