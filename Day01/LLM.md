@@ -107,3 +107,38 @@ Token ID
 Embedding
 [0.12, -0.81, 0.42, 0.19, ...]
 ``
+
+## Transformer
+### A transformer model is a deep learning neural network architecture that processes sequential data by tracking relationships and context across all elements simultaneously using self-attention mechanisms
+
+### The Transformer is the architecture underlying modern LLMs.
+Input Tokens
+     ↓
+Embeddings
+     ↓
+┌────────────────────┐
+│ Transformer Block  │
+│                    │
+│ Self-Attention     │
+│       ↓            │
+│ Feed-Forward       │
+│       ↓            │
+│ Normalization etc. │
+└─────────┬──────────┘
+          │
+          ▼
+   Transformer Block
+          │
+          ▼
+         ...
+          │
+          ▼
+      Final state
+          │
+          ▼
+       Logits
+          │
+          ▼
+ Probability of next token
+
+![token](/img/trans.png)
