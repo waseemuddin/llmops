@@ -142,3 +142,26 @@ Embeddings
  Probability of next token
 
 ![token](/img/trans.png)
+
+### Attention
+### The attention mechanism is the core mathematical process that allows large language models (LLMs) to understand context and relationships between words in a sequence
+
+Attention is one of the most important concepts to understand.
+Consider:
+### The server crashed because it ran out of memory.
+When processing later tokens, the model needs relationships between earlier pieces of the sequence.
+Self-attention lets tokens interact with other relevant tokens in the context.
+
+### Very simplified:
+
+The server crashed because it ran out of memory.
+     ▲                      ▲                ▲
+     └──────────────────────┴────────────────┘
+              relationships
+
+Underneath, attention involves:
+Q = Query
+K = Key
+V = Value
+
+![token](/img/atten.png)
