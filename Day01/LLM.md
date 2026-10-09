@@ -47,3 +47,6 @@ Conceptually:
                      │
                      ▼
                   Response
+                  
+
+![token](/img/token.png)
