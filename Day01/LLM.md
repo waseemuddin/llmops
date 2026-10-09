@@ -48,5 +48,6 @@ Conceptually:
                      ▼
                   Response
                   
+A tokenizer is a software tool or algorithm that converts raw text into smaller pieces called tokens (words, subwords, characters, or bytes) and maps them to unique numerical IDs.
 
 ![token](/img/token.png)
