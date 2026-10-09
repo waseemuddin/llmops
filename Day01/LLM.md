@@ -165,3 +165,5 @@ K = Key
 V = Value
 
 ![token](/img/atten.png)
+
+Q/K/V, attention heads and KV cache.
