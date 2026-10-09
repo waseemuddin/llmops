@@ -73,3 +73,34 @@ Further divides word units
 These divisions are called subwords
 Example: « playing » → [« play », « ##ing »]
 The ## indicates this subword attaches to a previous one
+
+
+### Why should an LLMOps engineer care?
+Because tokens affect:
+GPU memory
+Context size
+Latency
+Throughput
+API cost
+KV-cache consumption
+If an API charges per million tokens, tokenization directly affects cost.
+
+
+3. What is an Embedding?
+The integer: 41327
+
+An embedding is a list of numbers (a vector) that represents the semantic meaning of data like text, images, audio, or video in a way that computer algorithms can understand.
+
+![token](/img/embd02.png)
+
+The model converts each token ID into a numerical vector.
+Conceptually:
+
+Token
+"Kubernetes"
+     ↓
+Token ID
+41327
+     ↓
+Embedding
+[0.12, -0.81, 0.42, 0.19, ...]
