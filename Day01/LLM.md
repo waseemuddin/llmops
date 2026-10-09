@@ -86,17 +86,18 @@ Because tokens affect:
 
 If an API charges per million tokens, tokenization directly affects cost.
 
+### What is an Embedding?
 
-3. What is an Embedding?
 The integer: 41327
 
-An embedding is a list of numbers (a vector) that represents the semantic meaning of data like text, images, audio, or video in a way that computer algorithms can understand.
+### An embedding is a list of numbers (a vector) that represents the semantic meaning of data like text, images, audio, or video in a way that computer algorithms can understand.
 
 ![token](/img/embd02.png)
 
 The model converts each token ID into a numerical vector.
 Conceptually:
 
+``
 Token
 "Kubernetes"
      ↓
@@ -105,3 +106,4 @@ Token ID
      ↓
 Embedding
 [0.12, -0.81, 0.42, 0.19, ...]
+``
