@@ -9,6 +9,9 @@ Computers cannot directly reason over:
 
 Neural models work with numbers.
 An embedding model converts text into a numerical vector:
+
+```text
+
 "Kubernetes manages containers"
               ↓
         Embedding Model
@@ -23,12 +26,17 @@ Suppose, purely for illustration:
 "K8s orchestrates container workloads"
         [0.79, 0.74, 0.18]
 
+````
+
 Their vectors should point in relatively similar directions because the sentences have related meanings.
 
+```text
 But:
 "I like chocolate cake"
 
 [-0.31, 0.12, 0.91]
+````
+
 should be farther away.
 That property enables semantic search.
 
