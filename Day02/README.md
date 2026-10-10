@@ -1,4 +1,4 @@
-Day 02 of LLMOPS
+## Day 02 of LLMOPS
 
 
 ### What exactly is an embedding?
@@ -88,3 +88,131 @@ Document 1
 ```
 
 The database stores that vector alongside the original text and metadata.
+
+### Embedding dimensions
+
+An embedding isn't normally just three numbers.
+A model might produce:
+
+384 dimensions
+768 dimensions
+1024 dimensions
+1536 dimensions
+...
+
+```text
+For example:
+[
+  0.023,
+ -0.174,
+  0.631,
+  0.092,
+ ...
+]
+```
+
+If its dimension is 384, every text encoded by that model will have a vector with 384 values.
+This becomes operationally important because:
+
+```text
+More vectors
+       ×
+More dimensions
+       ×
+numeric storage size
+       =
+More storage / memory
+```
+
+Imagine an enterprise RAG system containing 10 million document chunks. Vector storage and search architecture suddenly matter.
+
+
+## Semantic similarity
+
+Suppose we have:
+```text
+
+A = "Kubernetes manages containers"
+
+B = "K8s orchestrates containerized applications"
+
+C = "I bought a new refrigerator"
+
+We expect:
+Similarity(A,B) = HIGH
+
+Similarity(A,C) = LOW
+
+```
+```text
+
+One common measure is cosine similarity.
+Conceptually:
+                   B
+                  /
+                 /
+                / small angle
+               /
+--------------A---------------->
+
+        C
+       /
+      /
+     /
+    ↓
+```
+
+
+The closer the direction of two vectors, the higher their cosine similarity.
+The formula is:
+
+```text
+cos(A,B)= A.B / ||A|| ||B||
+```
+
+You don't need to manually calculate this in production, but you should understand what it means.
+
+## Why embeddings matter to an FDE–LLMOps engineer
+
+Imagine a customer says:
+
+We have 2 million HR, procurement and policy documents. Employees should be able to ask questions about them.
+
+You can't simply put 2 million documents into every LLM prompt.
+
+```text
+                 OFFLINE / INGESTION
+
+PDF / DOCX / HTML / DB
+          ↓
+     Extract text
+          ↓
+        Chunk
+          ↓
+   Embedding Model
+          ↓
+       Vectors
+          ↓
+     Vector Database
+
+
+                 ONLINE / QUERY
+
+User Question
+     ↓
+Embedding Model
+     ↓
+Query Vector
+     ↓
+Vector Search
+     ↓
+Relevant Chunks
+     ↓
+LLM Context
+     ↓
+LLM
+     ↓
+Answer
+```
+
+You've just seen the basic architecture behind RAG.
