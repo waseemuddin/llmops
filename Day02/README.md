@@ -3,6 +3,12 @@
 
 ### What exactly is an embedding?
 
+Embeddings are the semantic backbone of LLMs, the gate at which raw text is transformed into vectors of numbers that are understandable by the model. When you prompt an LLM to help you debug your code, your words and tokens are transformed into a high-dimensional vector space where semantic relationships become mathematical relationships.
+
+![token](../img/embd.png)
+
+
+
 Computers cannot directly reason over:
 
 ### "Kubernetes manages containers"
@@ -216,3 +222,5 @@ Answer
 ```
 
 You've just seen the basic architecture behind RAG.
+
+Ref : https://huggingface.co/spaces/hesamation/primer-llm-embedding?section=what_are_embeddings?
