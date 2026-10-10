@@ -1,0 +1,31 @@
+LLM inference is the process of using a pre-trained Large Language Model (LLM) to generate text, code, or answers based on a user's input prompt. Unlike training, which builds and updates model weights, inference is a read-only, forward-pass operation.
+
+How LLM Inference Works
+
+The inference process happens in two main stages:
+• Tokenization: The input text is broken down into smaller pieces called tokens.
+• Prefill Phase: The model processes the entire input prompt in parallel across its transformer layers. This stage is compute-bound and measures Time to First Token (TTFT). It also builds the initial Key-Value (KV) cache.
+• Decode Phase: The model generates output tokens sequentially, one at a time, in an autoregressive loop. Each new token depends on the previous ones. This stage is memory-bandwidth bound and measures Tokens Per Output Token (TPOT).
+
+Key Performance Bottlenecks
+
+• Memory Bandwidth: Because decoding happens one token at a time, moving model parameters and KV cache data from GPU memory to the processor limits speed more than raw math capabilities.
+• GPU Memory (VRAM): Large models and long user conversations require massive amounts of memory to hold weights and KV cache states.
+
+Common Optimization Techniques
+
+• KV Caching: Stores past attention calculations so the model does not have to recompute earlier tokens.
+• Quantization: Reduces the numerical precision of model weights (e.g., from 16-bit to 4-bit or 8-bit) to save memory and increase speed.
+• Continuous Batching: Schedules and groups incoming and ongoing requests at the iteration level instead of waiting for entire static batches to finish.
+• PagedAttention / Paging: Manages KV cache memory in non-contiguous blocks (similar to operating system virtual memory) to eliminate memory fragmentation.
+• Specialized Engines: High-performance serving runtimes like NVIDIA TensorRT-LLM or on-device solutions like Google AI Edge MediaPipe LLM Inference API extract maximum hardware efficiency.
+Would you like to explore hardware requirements for running LLMs locally or how to optimize latency for a specific model?
+
+
+Links
+https://www.ibm.com/think/topics/llm-inference
+https://www.theneuralmaze.com/p/a-practical-guide-to-llm-inference
+https://arpitbhayani.me/blogs/how-llm-inference-works/
+https://www.truefoundry.com/blog/llm-inferencing
+
+https://www.youtube.com/watch?v=MVo3P-D7eSc&t=127
