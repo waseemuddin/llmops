@@ -26,7 +26,7 @@ Suppose, purely for illustration:
 "K8s orchestrates container workloads"
         [0.79, 0.74, 0.18]
 
-````
+```
 
 Their vectors should point in relatively similar directions because the sentences have related meanings.
 
@@ -35,7 +35,7 @@ But:
 "I like chocolate cake"
 
 [-0.31, 0.12, 0.91]
-````
+```
 
 should be farther away.
 That property enables semantic search.
@@ -53,13 +53,16 @@ Token Embedding
 ```
 
 Inside a transformer, individual tokens are represented as vectors.
-
+```text
 "Kubernetes manages containers"
               ↓
         Embedding Model
               ↓
     One vector representing
        the entire sentence
+```
+
+```text
 
 Later in RAG:
 
@@ -72,13 +75,16 @@ Embedding Model
 Vector
    ↓
 Vector Database
+```
 
 For example:
 Document 1
+```text
 "Kubernetes provides container orchestration."
 
        ↓
 
 [0.21, -0.53, 0.84, ....]
+```
 
 The database stores that vector alongside the original text and metadata.
