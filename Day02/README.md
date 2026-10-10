@@ -36,13 +36,14 @@ That property enables semantic search.
 
 Yesterday we discussed:
 
-``bash
+```text
 Token
  ↓
 Token ID
  ↓
 Token Embedding
-``
+```
+
 Inside a transformer, individual tokens are represented as vectors.
 
 "Kubernetes manages containers"
