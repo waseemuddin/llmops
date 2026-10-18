@@ -181,3 +181,52 @@ Prometheus can collect NVIDIA GPU metrics using DCGM exporter.
 - How can I monitor GPU utilization?
 - How can an LLM answer questions using company documents?
 ```
+
+
+semantic_search2.py 
+
+```bash
+
+from sentence_transformers import SentenceTransformer
+from sentence_transformers.util import cos_sim
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+documents = [
+    "vLLM provides high-throughput inference for large language models.",
+    "NVIDIA GPU Operator automates GPU software management in Kubernetes.",
+    "CUDA enables general-purpose computing on NVIDIA GPUs.",
+    "RAG combines information retrieval with language model generation.",
+    "Vector databases store embeddings for similarity search.",
+    "LLMs generate text by predicting subsequent tokens.",
+    "Prometheus can collect NVIDIA GPU metrics using DCGM exporter."
+]
+
+document_embeddings = model.encode(documents)
+
+print(document_embeddings.shape)
+query = input("Enter your question: ")
+
+query_embedding = model.encode(query)
+
+scores = cos_sim(query_embedding, document_embeddings)[0]
+
+results = sorted(
+    zip(documents, scores),
+    key=lambda x: x[1],
+    reverse=True
+)
+
+print("\nTOP RESULTS")
+print("=" * 70)
+
+for document, score in results[:3]:
+    print(f"\nScore: {score.item():.4f}")
+    print(document)
+
+```
+
+![embedding-2](/Day02/img/sem04.png)
+
+![embedding-2](/Day02/img/sem03.png)
+
