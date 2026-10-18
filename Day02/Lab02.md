@@ -230,3 +230,11 @@ for document, score in results[:3]:
 
 ![embedding-2](/Day02/img/sem03.png)
 
+
+How For every query, examine the Top 3.
+
+Don't just celebrate when #1 is correct. Ask:
+
+Why did #1 rank above #2?
+
+That's how we begin thinking like an AI engineer rather than simply running libraries.
