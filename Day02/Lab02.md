@@ -52,7 +52,7 @@ First 10 values:
 [-0.01  0.03  0.06 ...]
 ```
 
-![embedding-1](/img/embd.png)
+![embedding-1](/Day02/img/emb.png)
 
 Don't compare the exact numbers with mine.
 The important observation is:
@@ -99,7 +99,7 @@ for sentence, embedding in zip(sentences[1:], embeddings[1:]):
 python embedding_lab.py
 
 
-![embedding-2](/img/embd02.png)
+![embedding-2](/Day02/img/emb02.png)
 
 
 
