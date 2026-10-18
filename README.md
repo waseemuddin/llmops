@@ -1,3 +1,8 @@
+
+### LLMOPS - ROADMAP
+
+#### Topics
+
 1. LLM Fundamentals	1–3	Transformers, tokens, embeddings, attention, context, inference, sampling, hallucinations	Run and inspect models
 2. Advanced LLM Concepts	4–5	Quantization, KV cache, LoRA/QLoRA, fine-tuning, model sizing	Quantized model experiments
 3. GPU Engineering	6–8	NVIDIA architecture, CUDA, VRAM, drivers, containers, GPU Operator	GPU-enabled Kubernetes
@@ -8,3 +13,12 @@
 8. Security	20–21	prompt injection, RAG poisoning, IAM/RBAC, secrets, isolation	Secure RAG platform
 9. Managed AI	22	Bedrock + Azure/GCP concepts, managed vs self-hosted	Hybrid architecture
 10. FDE	23–24	discovery, requirements, architecture, PoC, troubleshooting, customer communication	Customer case study
+
+### Sequeance To be Follow
+
+Day01
+    - REAMME.md
+    - Lab.me
+    - Interview Questions.md
+    - Ref.md
+    - others.md
