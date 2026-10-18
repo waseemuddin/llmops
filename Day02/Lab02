@@ -1,9 +1,13 @@
+
+#### Embeddings Program
+
 ```bash
+
 pip install torch sentence-transformers
 
 python -c "import torch; print(torch.__version__)"
-python -c "import torch; print('CUDA:', torch.cuda.is_available())"
-````
+python -c "import torch; print('CUDA:', torch.cuda.is_available())
+```
 
 On your current machine, don't worry if you get:
 CUDA: False
@@ -31,7 +35,7 @@ print(embedding.shape)
 
 print("\nFirst 10 values:")
 print(embedding[:10])
-````
+```
 
 
 python embedding_lab.py
@@ -47,8 +51,10 @@ Embedding dimension:
 First 10 values:
 [-0.01  0.03  0.06 ...]
 ```
+
 Don't compare the exact numbers with mine.
 The important observation is:
+
 ```text
 Sentence
    ↓
@@ -56,6 +62,7 @@ all-MiniLM-L6-v2
    ↓
 384-dimensional vector
 ```
+
 ### Semantic similarity
 
 ```bash
@@ -86,6 +93,7 @@ for sentence, embedding in zip(sentences[1:], embeddings[1:]):
     score = cos_sim(query, embedding).item()
     print(f"{score:.4f} | {sentence}")
 ```
+
 python embedding_lab.py
 
 ### Build your first semantic search engine
