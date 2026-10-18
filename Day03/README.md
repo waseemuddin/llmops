@@ -2,10 +2,15 @@
 ## Day 03 — Transformer Architecture: From Fundamentals to GPU Memory Engineering
 
 Level: Beginner → Intermediate → Advanced
+
 Duration: 60 minutes
+
 Environment: Ubuntu Linux + Python + PyTorch + Hugging Face
+
 Hardware: CPU sufficient; NVIDIA GPU optional
-Career target: Forward Deployed Engineer — LLMOps / AI Infrastructure
+
+Career target: Forward Deployed Engineer — LLMOps / AI 
+Infrastructure
 
 ### PART 1 — TRANSFORMER FUNDAMENTALS
 
@@ -200,18 +205,7 @@ The decoder uses both its previously generated tokens and information produced b
 
 These architectures are useful for tasks such as translation and summarization.
 
-```text
-
-| Feature | Encoder-only | Decoder-only | Encoder–decoder |
-|---|---|---|---|
-| Examples | BERT, MiniLM | GPT, Llama | T5, BART |
-| Main purpose | Understanding/representation | Text generation | Sequence transformation |
-| Attention | Usually bidirectional | Causal | Encoder + decoder attention |
-| Embeddings | Common | Possible | Possible |
-| Generative chat | Not the primary design | Excellent fit | Supported |
-| FDE relevance | RAG retrieval | LLM serving | Specialized workloads |
-
-```
+![Tab-1](/Day03/img/tab01.png)
 
 
 ### PART 3 — UNDERSTANDING TRANSFORMER COMPONENTS
