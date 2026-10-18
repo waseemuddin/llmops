@@ -331,4 +331,47 @@ Where:
 - \(d_k\) is the key dimension.
 - \(M\) is an optional attention mask, such as a causal mask.
 
-We'll implement a simplified version in Lab 3.2.
+
+### Multi-head attention
+
+Instead of calculating just one attention pattern, Transformers can calculate multiple patterns using different learned projections.
+
+```text
+              Input
+                |
+      +---------+---------+
+      |         |         |
+      v         v         v
+    Head 1    Head 2    Head 3
+      |         |         |
+      +---------+---------+
+                |
+                v
+           Concatenate
+                |
+                v
+         Output Projection
+                |
+                v
+              Output
+```
+Different heads can learn different relationships, although they are not guaranteed to correspond to distinct human-interpretable functions.
+
+For example, a model configuration might specify:
+```text
+
+Hidden size:      768
+Attention heads:   12
+Head dimension:    64
+```
+
+Because:
+```text
+\[
+768 / 12 = 64
+\]
+```
+
+Modern architectures may use grouped-query attention (GQA) or multi-query attention (MQA), where the number of query heads differs from the number of key/value heads.
+
+This distinction becomes particularly important when calculating KV-cache memory.
