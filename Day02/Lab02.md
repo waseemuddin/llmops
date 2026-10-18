@@ -173,9 +173,11 @@ LLMs generate text by predicting subsequent tokens.
 Prometheus can collect NVIDIA GPU metrics using DCGM exporter.
 
 ### Queries
+```text
 
--How do I deploy GPU software in Kubernetes?
--How can I serve an LLM efficiently?
--Where should I store embeddings?
--How can I monitor GPU utilization?
--How can an LLM answer questions using company documents?
+- How do I deploy GPU software in Kubernetes?
+- How can I serve an LLM efficiently?
+- Where should I store embeddings?
+- How can I monitor GPU utilization?
+- How can an LLM answer questions using company documents?
+```
