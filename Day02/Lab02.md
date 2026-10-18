@@ -238,3 +238,83 @@ Don't just celebrate when #1 is correct. Ask:
 Why did #1 rank above #2?
 
 That's how we begin thinking like an AI engineer rather than simply running libraries.
+
+### Improve Your Semantic Search
+
+vi emantic_search_imp.py
+
+```bash
+
+from sentence_transformers import SentenceTransformer
+from sentence_transformers.util import cos_sim
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+documents = [
+    "Kubernetes manages containerized applications.",
+
+    "vLLM is an inference engine designed for efficient "
+    "serving of large language models with high throughput.",
+
+    "NVIDIA GPU Operator manages GPU drivers and "
+    "GPU software components in Kubernetes clusters.",
+
+    "Prometheus collects infrastructure monitoring metrics.",
+
+    "PostgreSQL is a relational database management system.",
+
+    "RAG retrieves relevant documents to help language "
+    "models answer questions using external information.",
+
+    "Vector databases store embeddings and support "
+    "semantic similarity search."
+]
+
+embeddings = model.encode(documents)
+
+query = input("Enter your question: ")
+
+query_embedding = model.encode(query)
+
+scores = cos_sim(query_embedding, embeddings)[0]
+
+results = sorted(
+    zip(documents, scores),
+    key=lambda x: x[1],
+    reverse=True
+)
+
+# Experimental threshold, not a universal cutoff
+THRESHOLD = 0.30
+
+print("\nSEMANTIC SEARCH RESULTS")
+print("=" * 60)
+
+relevant = [
+    (doc, score)
+    for doc, score in results
+    if score.item() >= THRESHOLD
+]
+
+if not relevant:
+    print("No sufficiently relevant documents found.")
+else:
+    for document, score in relevant[:3]:
+        print(f"\nScore: {score.item():.4f}")
+        print(document)
+```
+
+```text
+
+Test:
+How can I serve an LLM efficiently?
+
+Then:
+What's the weather in London?
+
+Then:
+How can I manage GPUs in Kubernetes?
+```
+#### The 0.30 threshold is only for experimentation. Production thresholds must be calibrated using representative queries and evaluation data.
+
+![embedding-2](/Day02/img/sem05.png)

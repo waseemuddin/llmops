@@ -29,3 +29,5 @@ Question → embedding → similarity search
 Not necessarily. Usually an embedding model generates the vectors, while the vector database stores, indexes and searches them. Some managed systems can integrate embedding generation.
 
 
+###  Why does embedding dimensionality matter in a production RAG system?
+It affects vector storage, memory requirements, similarity-search computation, indexing, and potentially retrieval quality.
