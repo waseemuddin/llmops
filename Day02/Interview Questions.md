@@ -1,4 +1,4 @@
-Day 2 interview checkpoint
+## Day 2 interview checkpoint
 
 ### What is an embedding?
 

@@ -8,6 +8,8 @@ The LLM does not directly understand this as a sentence.
 
 Conceptually:
 
+```text
+
 "What is Kubernetes?"
         │
         ▼
@@ -49,6 +51,8 @@ Conceptually:
                      ▼
                   Response
                   
+```
+
 ### A tokenizer is a software tool or algorithm that converts raw text into smaller pieces called tokens (words, subwords, characters, or bytes) and maps them to unique numerical IDs.
 
 ![token](/img/token.png)
@@ -60,23 +64,33 @@ Conceptually:
 Divides text into individual words
 Easy for languages like English where words are naturally separated
 Harder for languages without clear word boundaries
+```text
 Example: « Today is nice weather » → [« Today », « is », « nice », « weather »]
+```
 
 ### Character-level Tokens
 
 Splits text character by character
+```text
+
 Example: « Hello » → [« H », « e », « l », « l », « o »]
+```
 
 ### Subword-level Tokens
 
 Further divides word units
 These divisions are called subwords
+```text
+
 Example: « playing » → [« play », « ##ing »]
+```
+
 The ## indicates this subword attaches to a previous one
 
 
 ### Why should an LLMOps engineer care?
 Because tokens affect:
+
 #### GPU memory
 #### Context size
 #### Latency
@@ -112,6 +126,9 @@ Embedding
 ### A transformer model is a deep learning neural network architecture that processes sequential data by tracking relationships and context across all elements simultaneously using self-attention mechanisms
 
 ### The Transformer is the architecture underlying modern LLMs.
+
+```text
+
 Input Tokens
      ↓
 Embeddings
@@ -140,6 +157,7 @@ Embeddings
           │
           ▼
  Probability of next token
+```
 
 ![token](/img/trans.png)
 
@@ -154,10 +172,13 @@ Self-attention lets tokens interact with other relevant tokens in the context.
 
 ### Very simplified:
 
+```text
+
 The server crashed because it ran out of memory.
      ▲                      ▲                ▲
      └──────────────────────┴────────────────┘
               relationships
+```
 
 Underneath, attention involves:
 Q = Query
