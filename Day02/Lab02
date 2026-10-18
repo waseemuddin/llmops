@@ -3,7 +3,7 @@ pip install torch sentence-transformers
 
 python -c "import torch; print(torch.__version__)"
 python -c "import torch; print('CUDA:', torch.cuda.is_available())"
-```
+````
 
 On your current machine, don't worry if you get:
 CUDA: False
@@ -13,6 +13,7 @@ We can perform this lab on CPU. GPU execution comes in our GPU Engineering phase
 ### Generate your first embedding
 
 vi embedding_lab.py
+
 ```bash
 from sentence_transformers import SentenceTransformer
 
@@ -30,7 +31,8 @@ print(embedding.shape)
 
 print("\nFirst 10 values:")
 print(embedding[:10])
-```
+````
+
 
 python embedding_lab.py
 
