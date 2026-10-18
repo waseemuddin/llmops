@@ -104,6 +104,7 @@ python embedding_lab.py
 
 
 ### Build your first semantic search engine
+
 vi semantic_search.py
 
 ```bash
@@ -152,6 +153,12 @@ Try
 How can I automatically increase application capacity?
 How do I monitor my infrastructure?
 How can GPUs help machine learning?
+
+![embedding-2](/Day02/img/sem01.png)
+
+
+![embedding-2](/Day02/img/sem02.png)
+
 
 ### Challenge
 
